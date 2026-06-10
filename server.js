@@ -111,8 +111,7 @@ const skillBuilder = Alexa.SkillBuilders.custom()
   .addErrorHandlers(ErrorHandler)
   .create();
 
-const adapter = new ExpressAdapter(skillBuilder, true, true);
-
+const adapter = new ExpressAdapter(skillBuilder, false, false);
 app.post('/alexa', adapter.getRequestHandlers());
 app.get('/', (req, res) => res.send('Servidor Alexa-Gemini activo ✅'));
 
